@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metal Studio Terán</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Iconos (Se mantiene para mantener funcionalidad visual) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teran-primario': '#333b4b',
+                        'teran-secundario': '#d2d2ca',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Forzar fuente Arial y peso normal en todo el documento */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+        }
+        
+        /* Asegurar que ningún encabezado tome negrita por defecto del navegador */
+        h1, h2, h3, h4, h5, h6, p, a, span, button, input, textarea, select {
+            font-weight: normal !important;
+        }
+
+        /* Excepción para los íconos de FontAwesome que requieren font-weight específico para funcionar */
+        .fa-solid, .fa-brands {
+            font-weight: 900 !important;
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+        }
+    </style>
+</head>
+<body class="bg-[#d2d2ca] text-[#333b4b] flex flex-col min-h-screen text-base">
+
+    <!-- Encabezado / Navegación -->
+    <header class="bg-[#333b4b] text-[#d2d2ca] sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <div class="flex items-center gap-4">
+                    <img src="logo.jpg" alt="Metal Studio Terán" class="w-12 h-12 object-cover border border-[#d2d2ca]" onerror="this.onerror=null; this.src='https://placehold.co/100x100/d2d2ca/333b4b?text=Logo';">
+                    <div class="flex flex-col">
+                        <span class="text-xl uppercase tracking-widest">Metal Studio Terán</span>
+                        <span class="text-[10px] uppercase tracking-[0.2em] opacity-70">Diseño | Soldadura | Fabricación</span>
+                    </div>
+                </div>
+
+                <!-- Menú de escritorio con enlaces a carpetas -->
+                <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-wider">
+                    <!-- Enlace activo Inicio con color dorado #FFD700 -->
+                    <a href="#" class="text-[#FFD700] border-b-2 border-[#FFD700] py-1 transition-all">Inicio</a>
+                    <a href="servicios/" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Servicios</a>
+                    <a href="productos/" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Productos</a>
+                    <a href="nosotros/" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Nosotros</a>
+                    <a href="contacto/" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Contacto</a>
+                </nav>
+
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 text-[#d2d2ca] hover:text-white">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#333b4b] border-t border-[#d2d2ca]/20">
+            <div class="flex flex-col px-4 py-4 space-y-4 text-center uppercase text-sm tracking-wider">
+                <!-- Enlace activo Inicio en menú móvil con color dorado #FFD700 -->
+                <a href="#" class="text-[#FFD700] hover:text-white">Inicio</a>
+                <a href="servicios/" class="text-[#d2d2ca] hover:text-white">Servicios</a>
+                <a href="proyectos/" class="text-[#d2d2ca] hover:text-white">Proyectos</a>
+                <a href="nosotros/" class="text-[#d2d2ca] hover:text-white">Nosotros</a>
+                <a href="contacto/" class="text-[#d2d2ca] hover:text-white">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- Sección Principal (3 Columnas) -->
+        <section class="w-full bg-[#d2d2ca] py-6 border-b border-[#333b4b]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                    
+                    <!-- Panel 1: Diseño CAD -->
+                    <div class="flex flex-col bg-white border border-[#333b4b]">
+                        <div class="h-64 sm:h-80 relative">
+                            <img src="molino_01.jpg" alt="Diseño CAD Molino" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x600/333b4b/d2d2ca?text=molino_01.jpg';">
+                        </div>
+                        <div class="p-4 bg-[#333b4b] text-[#d2d2ca] text-center border-t border-[#d2d2ca]">
+                            <span class="text-sm uppercase tracking-widest">Plano de diseño CAD</span>
+                        </div>
+                    </div>
+
+                    <!-- Panel 2: Fotografía Real -->
+                    <div class="flex flex-col bg-white border border-[#333b4b]">
+                        <div class="h-64 sm:h-80 relative">
+                            <img src="molino_02.jpg" alt="Molino Real" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x600/333b4b/d2d2ca?text=molinoreal.jpg';">
+                        </div>
+                        <div class="p-4 bg-[#333b4b] text-[#d2d2ca] text-center border-t border-[#d2d2ca]">
+                            <span class="text-sm uppercase tracking-widest">Molino real fabricado</span>
+                        </div>
+                    </div>
+
+                    <!-- Panel 3: Título Gold Mill -->
+                    <div class="flex flex-col justify-center items-center text-center p-8 bg-[#FFD700] text-[#333b4b] border border-[#333b4b]">
+                        <span class="text-6xl sm:text-7xl uppercase tracking-widest leading-tight">Gold<br>Mill</span>
+                        <div class="w-16 h-px bg-[#d2d2ca] my-6"></div>
+                        <span class="text-sm uppercase tracking-widest">Molino de martillos para oro</span>
+                    </div>
+                </div>
+
+                <!-- Descripción y Botones de Compra -->
+                <div class="max-w-3xl mx-auto py-12 text-center">
+                    <p class="text-lg leading-relaxed text-[#333b4b]">
+                        Molino de oro tipo chileno a martillos, diseñado para trituración eficiente y alto rendimiento en procesos mineros. Construcción robusta, operación confiable y mantenimiento sencillo, ideal para maximizar la productividad y optimizar la obtención de oro mediante triturado y lavado de material.
+                    </p>
+                    
+                    <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="https://pay.hotmart.com/D104743086I" class="px-8 py-4 bg-transparent border-2 border-[#333b4b] text-[#333b4b] hover:bg-[#333b4b] hover:text-[#d2d2ca] uppercase tracking-wider text-sm transition-colors">
+                            Comprar diseño (Planos)
+                        </a>
+                        <a href="https://wa.me/59172614777?text=Hola%20Metal%20Studio%20Ter%C3%A1n%2C%20estoy%20interesado%20en%20adquirir%20el%20Molino%20de%20Oro%20en%20Bolivia." target="_blank" class="px-8 py-4 bg-[#333b4b] border-2 border-[#333b4b] text-[#d2d2ca] hover:bg-transparent hover:text-[#333b4b] uppercase tracking-wider text-sm transition-colors">
+                            Comprar molino (Bolivia)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Video -->
+        <section class="py-16 bg-[#333b4b] text-[#d2d2ca]">
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl uppercase tracking-widest">Prueba del molino</h2>
+                    <p class="text-sm uppercase tracking-widest mt-2 opacity-70">Video del equipo en funcionamiento</p>
+                </div>
+
+                <div class="relative aspect-video border border-[#d2d2ca] bg-[#1a1f28] flex items-center justify-center group cursor-pointer" id="play-video-btn">
+                    <img src="molino_02.jpg" alt="Video cover" class="absolute inset-0 w-full h-full object-cover opacity-30">
+                    <div class="z-10 flex flex-col items-center">
+                        <div class="w-20 h-20 border-2 border-[#d2d2ca] rounded-full flex items-center justify-center text-[#d2d2ca] group-hover:bg-[#d2d2ca] group-hover:text-[#333b4b] transition-colors">
+                            <i class="fa-solid fa-play text-2xl ml-1"></i>
+                        </div>
+                        <span class="mt-6 uppercase tracking-widest text-sm bg-[#333b4b] px-4 py-2 border border-[#d2d2ca]">Reproducir video</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video -->
+        <div id="video-modal" class="fixed inset-0 bg-[#333b4b] bg-opacity-95 z-50 hidden flex items-center justify-center p-4">
+            <div class="w-full md:w-9/12 max-w-6xl bg-[#d2d2ca] p-2 border border-[#333b4b] relative">
+                <button id="close-video-btn" class="absolute -top-10 right-0 text-[#d2d2ca] hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i> CERRAR
+                </button>
+                
+                <div class="aspect-[4/3] bg-[#333b4b] w-full">
+                    <video 
+                        id="modal-video"
+                        class="w-full h-full object-contain" 
+                        src="molino.mp4" 
+                        controls 
+                        playsinline>
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ficha Técnica (Con imagen proporción 1:1) -->
+        <section class="py-16 bg-[#d2d2ca] border-b border-[#333b4b]">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-10 text-center md:text-left">
+                    <h2 class="text-3xl uppercase tracking-widest text-[#333b4b]">Ficha Técnica</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Lista de Características -->
+                    <div class="bg-white border border-[#333b4b] p-8">
+                        <ul class="space-y-4 text-base text-[#333b4b]">
+                            <li class="flex flex-col sm:flex-row justify-between border-b border-[#d2d2ca] pb-2">
+                                <span class="uppercase text-sm tracking-wider">Características técnicas:</span>
+                                <span>MOLINO DE MARTILLOS</span>
+                            </li>
+                            <li class="flex flex-col sm:flex-row justify-between border-b border-[#d2d2ca] pb-2">
+                                <span class="uppercase text-sm tracking-wider">Adaptable a:</span>
+                                <span>Motor eléctrico / gasolina / diésel.</span>
+                            </li>
+                            <li class="flex flex-col sm:flex-row justify-between border-b border-[#d2d2ca] pb-2">
+                                <span class="uppercase text-sm tracking-wider">Capacidad de producción:</span>
+                                <span>500 kg/hr a 1.2 T/hr</span>
+                            </li>
+                            <li class="flex flex-col sm:flex-row justify-between border-b border-[#d2d2ca] pb-2">
+                                <span class="uppercase text-sm tracking-wider">Número de martillos:</span>
+                                <span>2 y 4 martillos de pala</span>
+                            </li>
+                            <li class="flex flex-col sm:flex-row justify-between border-b border-[#d2d2ca] pb-2">
+                                <span class="uppercase text-sm tracking-wider">Dimensiones:</span>
+                                <span>115 x 85 x 95 cm aprox.</span>
+                            </li>
+                            <li class="flex flex-col sm:flex-row justify-between border-b border-[#d2d2ca] pb-2">
+                                <span class="uppercase text-sm tracking-wider">Peso:</span>
+                                <span>395 Kg con martillos.</span>
+                            </li>
+                            <li class="flex flex-col sm:flex-row justify-between pb-2">
+                                <span class="uppercase text-sm tracking-wider">Materiales de fabricación:</span>
+                                <span>Acero ASTM A36</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-8">
+                            <a href="fichatecnicamolino.pdf" download="fichatecnicamolino.pdf" class="block w-full text-center py-4 bg-[#333b4b] text-[#d2d2ca] uppercase tracking-wider text-sm hover:bg-opacity-90 transition-colors">
+                                Descargar ficha técnica en PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Imagen 1:1 -->
+                    <div class="flex justify-center items-center">
+                        <div class="w-full max-w-md aspect-square border border-[#333b4b] bg-white p-2">
+                            <img src="molino_03.jpg" alt="Molino 1:1" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x600/333b4b/d2d2ca?text=molino_02.jpg';">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ventajas, Aplicaciones, Compartación -->
+        <section class="py-16 bg-[#333b4b] text-[#d2d2ca]">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Ventajas -->
+                    <div class="border border-[#d2d2ca] p-8">
+                        <h3 class="text-xl uppercase tracking-widest mb-6 pb-2 border-b border-[#d2d2ca]">Ventajas</h3>
+                        <ul class="space-y-4">
+                            <li>- Alta productividad. </li>
+                            <li>- Bajo mantenimiento. </li>
+                            <li>- Estructura reforzada.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Aplicaciones -->
+                    <div class="border border-[#d2d2ca] p-8">
+                        <h3 class="text-xl uppercase tracking-widest mb-6 pb-2 border-b border-[#d2d2ca]">Aplicaciones</h3>
+                        <ul class="space-y-4">
+                            <li>- Minería aurífera.</li>
+                            <li>- Trituración del material.</li>
+                            <li>- Pequeña y mediana minería.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Comparación -->
+                    <div class="border border-[#d2d2ca] p-8">
+                        <h3 class="text-xl uppercase tracking-widest mb-6 pb-2 border-b border-[#d2d2ca]">Beneficios</h3>
+                        <ul class="space-y-4">
+                            <li>- Menor tiempo de molienda.</li>
+                            <li>- Mayor rendimiento.</li>
+                            <li>- Mayor durabilidad.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Preguntas Frecuentes -->
+        <section class="py-16 bg-[#d2d2ca] border-b border-[#333b4b]">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-3xl uppercase tracking-widest text-[#333b4b] text-center mb-10">FAQ - Preguntas Frecuentes</h2>
+
+                <div class="space-y-2">
+                    <div class="border border-[#333b4b] bg-white">
+                        <button class="w-full text-left px-6 py-4 uppercase tracking-wider text-sm text-[#333b4b] flex justify-between items-center" onclick="toggleAccordion('faq1')">
+                            <span>Tipo de energía</span>
+                            <i id="faq1-icon" class="fa-solid fa-plus"></i>
+                        </button>
+                        <div id="faq1" class="hidden px-6 pb-4 pt-2 text-[#333b4b] border-t border-[#d2d2ca]">
+                            El equipo se vende con sistema de poleas compatible y adapatable con el sistema de su preferencia, puede usar motor eléctrico, o motor a gasolina o a diésel, brindamos asesoramiento de la potencia y tipo.
+                        </div>
+                    </div>
+
+                    <div class="border border-[#333b4b] bg-white">
+                        <button class="w-full text-left px-6 py-4 uppercase tracking-wider text-sm text-[#333b4b] flex justify-between items-center" onclick="toggleAccordion('faq2')">
+                            <span>Mantenimiento</span>
+                            <i id="faq2-icon" class="fa-solid fa-plus"></i>
+                        </button>
+                        <div id="faq2" class="hidden px-6 pb-4 pt-2 text-[#333b4b] border-t border-[#d2d2ca]">
+                            De fácil mantenimiento, usualmente engrase periódico de chumaceras e inspección visual de desgaste en martillos intercambiables, las grellas también son intercambiables.
+                        </div>
+                    </div>
+
+                    <div class="border border-[#333b4b] bg-white">
+                        <button class="w-full text-left px-6 py-4 uppercase tracking-wider text-sm text-[#333b4b] flex justify-between items-center" onclick="toggleAccordion('faq3')">
+                            <span>Capacidad</span>
+                            <i id="faq3-icon" class="fa-solid fa-plus"></i>
+                        </button>
+                        <div id="faq3" class="hidden px-6 pb-4 pt-2 text-[#333b4b] border-t border-[#d2d2ca]">
+                            De 500 kg a 1.2 toneladas por hora, según el tamaño y dureza de la piedra ingresada y la cantidad de martillos que se use, de dos o cuatro palas, el equipo admite hasta piedras de 7 cm de tamaño.
+                        </div>
+                    </div>
+
+                    <div class="border border-[#333b4b] bg-white">
+                        <button class="w-full text-left px-6 py-4 uppercase tracking-wider text-sm text-[#333b4b] flex justify-between items-center" onclick="toggleAccordion('faq4')">
+                            <span>Entrega</span>
+                            <i id="faq4-icon" class="fa-solid fa-plus"></i>
+                        </button>
+                        <div id="faq4" class="hidden px-6 pb-4 pt-2 text-[#333b4b] border-t border-[#d2d2ca]">
+                            La entrega se realiza personalmente realizando la comprobación del equipo en vivo.
+                        </div>
+                    </div>
+
+                    <div class="border border-[#333b4b] bg-white">
+                        <button class="w-full text-left px-6 py-4 uppercase tracking-wider text-sm text-[#333b4b] flex justify-between items-center" onclick="toggleAccordion('faq5')">
+                            <span>Solo deseo adquirir los planos</span>
+                            <i id="faq5-icon" class="fa-solid fa-plus"></i>
+                        </button>
+                        <div id="faq5" class="hidden px-6 pb-4 pt-2 text-[#333b4b] border-t border-[#d2d2ca]">
+                            Para clientes internacionales, ofrecemos sólo los archivos de objetos 3D del equipo, posteriormente se enviarán los planos detallados y acotados, el costo es de 50 $US Dólares Americanos. El cobro actualmente es mediante transferencia bancaria internacional con ACH, consultas al email samteran2205@gmail.com.
+                        </div>
+                    </div>
+
+                    <div class="border border-[#333b4b] bg-white">
+                        <button class="w-full text-left px-6 py-4 uppercase tracking-wider text-sm text-[#333b4b] flex justify-between items-center" onclick="toggleAccordion('faq6')">
+                            <span>Costo del Molino para oro</span>
+                            <i id="faq6-icon" class="fa-solid fa-plus"></i>
+                        </button>
+                        <div id="faq6" class="hidden px-6 pb-4 pt-2 text-[#333b4b] border-t border-[#d2d2ca]">
+                            Actualmente el precio se encuentra en 25.000 Bs, tiene un retorno de inversión muy rentable, usualmente no mayor a 2 meses, dependiendo de la zona aurífera boliviana.
+                        </div>
+                    </div>
+                    
+                    <div class="border border-[#333b4b] bg-white">
+                        <button class="w-full text-left px-6 py-4 uppercase tracking-wider text-sm text-[#333b4b] flex justify-between items-center" onclick="toggleAccordion('faq7')">
+                            <span>RESPECTO A LOS PAGOS</span>
+                            <i id="faq7-icon" class="fa-solid fa-plus"></i>
+                        </button>
+                        <div id="faq7" class="hidden px-6 pb-4 pt-2 text-[#333b4b] border-t border-[#d2d2ca]">
+                            Para clientes bolivianos que deseen adquirir el equipo el cobro se permite en efectivo o mediante depósito bancario, puede realizarse en dos pagos, el primero con el 50% del total antes de empezar el proyecto, y el segundo pago al finalizar el proyecto el día de la prueba.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto y Envíos -->
+        <section id="contacto" class="py-16 bg-[#333b4b] text-[#d2d2ca]">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    
+                    <!-- Información de Contacto -->
+                    <div class="flex flex-col space-y-8">
+                        <div>
+                            <h2 class="text-3xl uppercase tracking-widest mb-6">Cotización inmediata</h2>
+                        </div>
+
+                        <div class="flex flex-col space-y-6">
+                            <div class="border border-[#d2d2ca] p-6">
+                                <h4 class="uppercase tracking-wider mb-2">Contacto directo</h4>
+                                <a href="https://wa.me/59172614777?text=Hola%20estoy%20interesado%20en%20el%20Molino." target="_blank" class="text-xl underline">
+                                    WhatsApp: +591 726 14 777
+                                </a>
+                            </div>
+
+                            <div class="border border-[#d2d2ca] p-6">
+                                <h4 class="uppercase tracking-wider mb-2">Ubicación en Bolivia</h4>
+                                <p>Av. Albina Patiño Km 15½, 1km al Sur, Quillacollo, CBBA.</p>
+                            </div>
+
+                            <div class="border border-[#d2d2ca] p-6">
+                                <h4 class="uppercase tracking-wider mb-2">Cobertura</h4>
+                                <p>En Cochabamba y en todo el país con envío contraentrega.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Correo -->
+                    <div class="bg-[#d2d2ca] text-[#333b4b] p-8">
+                        <h3 class="text-xl uppercase tracking-widest mb-6">Enviar mensaje de interés</h3>
+                        <form id="contact-form" onsubmit="sendFormToEmail(event)" class="space-y-4">
+                            <div>
+                                <label class="block uppercase tracking-wider text-sm mb-2" for="name">Nombre Completo:</label>
+                                <input class="w-full px-4 py-3 bg-white border border-[#333b4b] outline-none" type="text" id="name" required>
+                            </div>
+                            <div>
+                                <label class="block uppercase tracking-wider text-sm mb-2" for="service">Me interesa:</label>
+                                <select class="w-full px-4 py-3 bg-white border border-[#333b4b] outline-none" id="service" required>
+                                    <option value="Comprar Planos y Diseño CAD">Comprar planos CAD</option>
+                                    <option value="Comprar Molino de Oro Completo">Comprar equipo fabricado</option>
+                                    <option value="Servicio de Consultoría">Servicio de consultoría</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block uppercase tracking-wider text-sm mb-2" for="msg">Mensaje:</label>
+                                <textarea class="w-full px-4 py-3 bg-white border border-[#333b4b] outline-none h-32 resize-none" id="msg" required></textarea>
+                            </div>
+                            <button class="w-full py-4 bg-[#333b4b] text-[#d2d2ca] uppercase tracking-wider text-sm hover:bg-opacity-90 transition-colors mt-4" type="submit">
+                                Enviar mensaje por correo
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-[#d2d2ca] text-[#333b4b] border-t border-[#333b4b] py-10 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <span class="block text-xl uppercase tracking-widest mb-4">Metal Studio Terán</span>
+            <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm uppercase tracking-wider">
+                <!-- Enlace activo en el pie de página con color dorado #FFD700 -->
+                <a href="#" class="text-[#FFD700] hover:underline">Inicio</a>
+                <a href="servicios/" class="hover:underline">Servicios</a>
+                <a href="productos/" class="hover:underline">Productos</a>
+                <a href="nosotros/" class="hover:underline">Nosotros</a>
+                <a href="contacto/" class="hover:underline">Contacto</a>
+            </div>
+            <a href="http://metalstudio.teran.beer" class="underline uppercase tracking-wider text-sm">metalstudio.teran.beer</a>
+            <p class="mt-8 text-xs uppercase tracking-widest opacity-70">© 2025 Metal Studio Terán by Samuel Terán.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante WhatsApp Sencillo -->
+    <a href="https://wa.me/59172614777?text=Hola%20estoy%20interesado%20en%20sus%20servicios." target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#333b4b] text-[#d2d2ca] border-2 border-[#d2d2ca] flex items-center justify-center rounded-full text-2xl z-50 hover:bg-[#d2d2ca] hover:text-[#333b4b] hover:border-[#333b4b] transition-colors shadow-lg">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Menú Móvil
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.replace('fa-xmark', 'fa-bars');
+            } else {
+                menuIcon.classList.replace('fa-bars', 'fa-xmark');
+            }
+        });
+
+        // FAQ Acordeón Sencillo
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            
+            content.classList.toggle('hidden');
+            if (content.classList.contains('hidden')) {
+                icon.classList.replace('fa-minus', 'fa-plus');
+            } else {
+                icon.classList.replace('fa-plus', 'fa-minus');
+            }
+        }
+
+        // Modal de Video
+        const playVideoBtn = document.getElementById('play-video-btn');
+        const videoModal = document.getElementById('video-modal');
+        const closeVideoBtn = document.getElementById('close-video-btn');
+        const modalVideo = document.getElementById('modal-video'); // Selector para el video
+
+        playVideoBtn.addEventListener('click', () => {
+            videoModal.classList.remove('hidden');
+        });
+
+        closeVideoBtn.addEventListener('click', () => {
+            videoModal.classList.add('hidden');
+            // Detenemos y reiniciamos el video por completo al cerrar
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+        });
+
+        // Envío Formulario al correo especificado
+        function sendFormToEmail(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            const msg = document.getElementById('msg').value;
+
+            const email = "samteran2205@gmail.com";
+            const subject = encodeURIComponent(`Consulta desde la Web - ${name}`);
+            const body = encodeURIComponent(`Nombre: ${name}\nInterés: ${service}\n\nMensaje:\n${msg}`);
+
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
