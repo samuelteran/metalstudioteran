@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Metal Studio Terán</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teran-primario': '#333b4b',
+                        'teran-secundario': '#d2d2ca',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Forzar fuente Arial y peso normal en todo el documento */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+        }
+        
+        /* Asegurar que ningún encabezado tome negrita por defecto del navegador */
+        h1, h2, h3, h4, h5, h6, p, a, span, button, input, textarea, select {
+            font-weight: normal !important;
+        }
+
+        /* Excepción para los íconos de FontAwesome que requieren font-weight específico para funcionar */
+        .fa-solid, .fa-brands {
+            font-weight: 900 !important;
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+        }
+    </style>
+</head>
+<body class="bg-[#d2d2ca] text-[#333b4b] flex flex-col min-h-screen text-base">
+
+    <!-- Encabezado / Navegación (Mantenido exactamente igual, Nosotros ahora está Activo en Dorado) -->
+    <header class="bg-[#333b4b] text-[#d2d2ca] sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <div class="flex items-center gap-4">
+                    <img src="../logo.jpg" alt="Metal Studio Terán" class="w-12 h-12 object-cover border border-[#d2d2ca]" onerror="this.onerror=null; this.src='https://placehold.co/100x100/d2d2ca/333b4b?text=Logo';">
+                    <div class="flex flex-col">
+                        <span class="text-xl uppercase tracking-widest">Metal Studio Terán</span>
+                        <span class="text-[10px] uppercase tracking-[0.2em] opacity-70">Diseño | Soldadura | Fabricación</span>
+                    </div>
+                </div>
+
+                <!-- Menú de escritorio con enlaces a carpetas (Nosotros marcado como Activo en Dorado) -->
+                <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-wider">
+                    <a href="../" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Inicio</a>
+                    <a href="../servicios" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Servicios</a>
+                    <a href="../productos" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Productos</a>
+                    <a href="#" class="text-[#FFD700] border-b-2 border-[#FFD700] py-1 transition-all">Nosotros</a>
+                    <a href="../contacto" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Contacto</a>
+                </nav>
+
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 text-[#d2d2ca] hover:text-white">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable (Nosotros marcado como Activo en Dorado) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#333b4b] border-t border-[#d2d2ca]/20">
+            <div class="flex flex-col px-4 py-4 space-y-4 text-center uppercase text-sm tracking-wider">
+                <a href="../" class="text-[#d2d2ca] hover:text-white">Inicio</a>
+                <a href="../servicios" class="text-[#d2d2ca] hover:text-white">Servicios</a>
+                <a href="../productos" class="text-[#d2d2ca] hover:text-white">Productos</a>
+                <a href="#" class="text-[#FFD700] hover:text-white">Nosotros</a>
+                <a href="../contacto" class="text-[#d2d2ca] hover:text-white">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- Sección Banner de Bienvenida "Nosotros" -->
+        <section class="bg-[#333b4b] text-[#d2d2ca] py-12 border-b border-[#d2d2ca]/20 text-center">
+            <div class="max-w-4xl mx-auto px-4">
+                <span class="text-xs uppercase tracking-[0.3em] opacity-80 block mb-2">Conoce nuestro taller</span>
+                <h1 class="text-4xl md:text-5xl uppercase tracking-widest text-[#FFD700]">Quiénes Somos</h1>
+                <div class="w-16 h-px bg-[#FFD700] mx-auto my-4"></div>
+                <p class="max-w-2xl mx-auto text-sm uppercase tracking-wider opacity-80">
+                    En Metal Studio Terán transformamos el metal en soluciones duraderas. Creamos con precisión e ingeniería para brindarte total tranquilidad en cada proyecto.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección Presentación y Compromiso -->
+        <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white border border-[#333b4b] p-8 md:p-12 text-center flex flex-col items-center">
+                <div class="space-y-6 max-w-3xl">
+                    <span class="text-xs uppercase tracking-[0.2em] text-[#333b4b] opacity-75">Tu aliado en metalurgia</span>
+                    <h2 class="text-3xl uppercase tracking-widest text-[#333b4b]">Calidad Estructural y Trato Directo</h2>
+                    <div class="w-12 h-px bg-[#333b4b] mx-auto"></div>
+                    
+                    <p class="text-sm leading-relaxed text-slate-700">
+                        Entendemos que encomendar un proyecto de metal mecánica requiere de una confianza absoluta. En <span class="text-slate-900">Metal Studio Terán</span>, liderado por Samuel Terán, no solo cortamos y soldamos acero: materializamos tus ideas con rigor técnico y honestidad. 
+                    </p>
+                    <p class="text-sm leading-relaxed text-slate-700">
+                        Trabajamos bajo la premisa de que todo proyecto exitoso inicia con una planificación transparente. Por eso, antes de encender las máquinas, nos aseguramos de que visualices el resultado final mediante <strong>diseños detallados y planos técnicos</strong>. Así eliminamos sorpresas y garantizamos que recibas exactamente lo que necesitas.
+                    </p>
+
+                    <!-- Puntos Clave de Confianza -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 max-w-xl mx-auto text-left w-full">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-[#333b4b] text-base"></i>
+                            <span class="text-xs uppercase tracking-wider">Diseños y Planos Previos</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-[#333b4b] text-base"></i>
+                            <span class="text-xs uppercase tracking-wider">Materiales Certificados</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-[#333b4b] text-base"></i>
+                            <span class="text-xs uppercase tracking-wider">Trato y Asesoría Directa</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-[#333b4b] text-base"></i>
+                            <span class="text-xs uppercase tracking-wider">Entregas Garantizadas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner de Confianza y Acción Directa -->
+        <section class="py-12 bg-white border-t border-b border-[#333b4b]/30">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <span class="text-xs uppercase tracking-[0.3em] opacity-80 block mb-2">¿Listo para empezar?</span>
+                <h2 class="text-3xl uppercase tracking-widest text-[#333b4b]">Hablemos de tu Proyecto</h2>
+                <div class="w-12 h-px bg-[#333b4b] mx-auto my-3"></div>
+                <p class="text-sm max-w-xl mx-auto uppercase tracking-wider opacity-80 mb-6">
+                    Sin compromisos, coordinemos una llamada para platicar de tus planos, darte una cotización transparente o agendar una visita a nuestro taller en Quillacollo.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://wa.me/59172614777?text=Hola%20Samuel%2C%20quisiera%20conversar%20sobre%20un%20proyecto%20de%20metal%20mec%C3%A1nica%20que%20tengo." 
+                       target="_blank" 
+                       class="px-6 py-4 bg-[#333b4b] text-white hover:bg-[#FFD700] hover:text-[#333b4b] uppercase tracking-wider text-xs transition-colors border border-[#333b4b]">
+                        <i class="fa-solid fa-comments mr-2"></i> Consulta Directa
+                    </a>
+                    <a href="contacto/" 
+                       class="px-6 py-4 bg-transparent border-2 border-[#333b4b] text-[#333b4b] hover:bg-[#333b4b] hover:text-white uppercase tracking-wider text-xs transition-colors">
+                        Ver Ubicación y Medios
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página (Mantenido exactamente igual, Nosotros marcado como activo) -->
+    <footer class="bg-[#d2d2ca] text-[#333b4b] border-t border-[#333b4b] py-10 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <span class="block text-xl uppercase tracking-widest mb-4">Metal Studio Terán</span>
+            <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm uppercase tracking-wider">
+                <a href="../" class="hover:underline">Inicio</a>
+                <a href="../servicios" class="hover:underline">Servicios</a>
+                <a href="../productos" class="hover:underline">Productos</a>
+                <a href="#" class="text-[#FFD700] hover:underline">Nosotros</a>
+                <a href="../contacto" class="hover:underline">Contacto</a>
+            </div>
+            <a href="http://metalstudio.teran.beer" class="underline uppercase tracking-wider text-sm">metalstudio.teran.beer</a>
+            <p class="mt-8 text-xs uppercase tracking-widest opacity-70">© 2025 Metal Studio Terán by Samuel Terán.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante WhatsApp Sencillo (Enlace Directo) -->
+    <a href="https://wa.me/59172614777?text=Hola%20estoy%20interesado%20en%20sus%20servicios." target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#333b4b] text-[#d2d2ca] border-2 border-[#d2d2ca] flex items-center justify-center rounded-full text-2xl z-50 hover:bg-[#d2d2ca] hover:text-[#333b4b] hover:border-[#333b4b] transition-colors shadow-lg">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Menú Móvil
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.replace('fa-xmark', 'fa-bars');
+            } else {
+                menuIcon.classList.replace('fa-bars', 'fa-xmark');
+            }
+        });
+    </script>
+</body>
+</html>

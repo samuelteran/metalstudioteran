@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Metal Studio Terán</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teran-primario': '#333b4b',
+                        'teran-secundario': '#d2d2ca',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Forzar fuente Arial y peso normal en todo el documento */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+        }
+        
+        /* Asegurar que ningún encabezado tome negrita por defecto del navegador */
+        h1, h2, h3, h4, h5, h6, p, a, span, button, input, textarea, select {
+            font-weight: normal !important;
+        }
+
+        /* Excepción para los íconos de FontAwesome que requieren font-weight específico para funcionar */
+        .fa-solid, .fa-brands {
+            font-weight: 900 !important;
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+        }
+    </style>
+</head>
+<body class="bg-[#d2d2ca] text-[#333b4b] flex flex-col min-h-screen text-base">
+
+    <!-- Encabezado / Navegación (Mantenido exactamente igual) -->
+    <header class="bg-[#333b4b] text-[#d2d2ca] sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <div class="flex items-center gap-4">
+                    <img src="../logo.jpg" alt="Metal Studio Terán" class="w-12 h-12 object-cover border border-[#d2d2ca]" onerror="this.onerror=null; this.src='https://placehold.co/100x100/d2d2ca/333b4b?text=Logo';">
+                    <div class="flex flex-col">
+                        <span class="text-xl uppercase tracking-widest">Metal Studio Terán</span>
+                        <span class="text-[10px] uppercase tracking-[0.2em] opacity-70">Diseño | Soldadura | Fabricación</span>
+                    </div>
+                </div>
+
+                <!-- Menú de escritorio con enlaces a carpetas (Contacto marcado como Activo en Dorado) -->
+                <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-wider">
+                    <a href="../" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Inicio</a>
+                    <a href="../servicios" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Servicios</a>
+                    <a href="../productos" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Productos</a>
+                    <a href="../nosotros" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Nosotros</a>
+                    <a href="#" class="text-[#FFD700] border-b-2 border-[#FFD700] py-1 transition-all">Contacto</a>
+                </nav>
+
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 text-[#d2d2ca] hover:text-white">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable (Contacto marcado como Activo en Dorado) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#333b4b] border-t border-[#d2d2ca]/20">
+            <div class="flex flex-col px-4 py-4 space-y-4 text-center uppercase text-sm tracking-wider">
+                <a href="../" class="text-[#d2d2ca] hover:text-white">Inicio</a>
+                <a href="../servicios" class="text-[#d2d2ca] hover:text-white">Servicios</a>
+                <a href="../productos" class="text-[#d2d2ca] hover:text-white">Productos</a>
+                <a href="../nosotros" class="text-[#d2d2ca] hover:text-white">Nosotros</a>
+                <a href="#" class="text-[#FFD700] hover:text-white">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- Sección Banner de Bienvenida -->
+        <section class="bg-[#333b4b] text-[#d2d2ca] py-12 border-b border-[#d2d2ca]/20 text-center">
+            <div class="max-w-4xl mx-auto px-4">
+                <span class="text-xs uppercase tracking-[0.3em] opacity-80 block mb-2">Nuestros medios</span>
+                <h1 class="text-4xl md:text-5xl uppercase tracking-widest text-[#FFD700]">Ponte en Contacto</h1>
+                <div class="w-16 h-px bg-[#FFD700] mx-auto my-4"></div>
+                <p class="max-w-xl mx-auto text-sm uppercase tracking-wider opacity-80">
+                    Estamos listos para materializar tus planos, realizar diseños a medida o coordinar la fabricación de tus equipos industriales.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contenedor Principal de Canales de Comunicación -->
+        <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+                
+                <!-- Tarjeta 1: WhatsApp y Llamadas -->
+                <a href="https://wa.me/59172614777?text=Hola%20Metal%20Studio%20Ter%C3%A1n%2C%20vengo%20desde%20su%20p%C3%A1gina%20web%20y%20deseo%20realizar%20una%20consulta." 
+                   target="_blank" 
+                   class="flex flex-col justify-between bg-white border border-[#333b4b] p-6 hover:shadow-md transition-all group min-h-[180px]">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-[#333b4b] text-[#d2d2ca] flex items-center justify-center text-xl group-hover:bg-[#FFD700] group-hover:text-[#333b4b] transition-colors flex-shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] uppercase tracking-widest opacity-70">WhatsApp / Teléfono</span>
+                            <span class="text-lg tracking-wider text-[#333b4b] underline font-sans">+591 72614777</span>
+                        </div>
+                    </div>
+                    <span class="text-xs text-green-600 mt-4"><i class="fa-brands fa-whatsapp"></i> Chat Directo (Bolivia)</span>
+                </a>
+
+                <!-- Tarjeta 2: Correo Electrónico -->
+                <a href="mailto:samteran2205@gmail.com?subject=Consulta%20desde%20la%20Web%20Metal%20Studio%20Ter%C3%A1n" 
+                   class="flex flex-col justify-between bg-white border border-[#333b4b] p-6 hover:shadow-md transition-all group min-h-[180px]">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-[#333b4b] text-[#d2d2ca] flex items-center justify-center text-xl group-hover:bg-[#FFD700] group-hover:text-[#333b4b] transition-colors flex-shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="flex flex-col overflow-hidden">
+                            <span class="text-[10px] uppercase tracking-widest opacity-70">Correo Electrónico</span>
+                            <span class="text-base sm:text-lg tracking-wider text-[#333b4b] underline truncate">samteran2205@gmail.com</span>
+                        </div>
+                    </div>
+                    <span class="text-xs opacity-60 mt-4">Respuestas en menos de 24 horas</span>
+                </a>
+
+                <!-- Tarjeta 3: Redes Sociales Unidas -->
+                <div class="bg-[#333b4b] text-[#d2d2ca] border border-[#333b4b] p-6 flex flex-col justify-between min-h-[180px]">
+                    <span class="text-[10px] uppercase tracking-widest block mb-4 opacity-70 text-center md:text-left">Nuestras Redes Sociales</span>
+                    
+                    <div class="grid grid-cols-1 gap-2.5">
+                        
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/profile.php?id=61586800777213" target="_blank" class="flex items-center justify-between p-2.5 bg-[#1a1f28]/50 hover:bg-[#1a1f28] transition-colors border border-transparent hover:border-[#d2d2ca]/30">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-brands fa-facebook text-lg text-[#FFD700]"></i>
+                                <span class="text-xs uppercase tracking-wider">Metal Studio Terán</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/metalstudioteran/" target="_blank" class="flex items-center justify-between p-2.5 bg-[#1a1f28]/50 hover:bg-[#1a1f28] transition-colors border border-transparent hover:border-[#d2d2ca]/30">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-brands fa-instagram text-lg text-[#FFD700]"></i>
+                                <span class="text-xs uppercase tracking-wider">@metalstudioteran</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
+                        </a>
+
+                        <!-- Tiktok (Próximamente) -->
+                        <div class="flex items-center justify-between p-2.5 bg-[#1a1f28]/20 opacity-50 cursor-not-allowed border border-dashed border-[#d2d2ca]/10">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-brands fa-tiktok text-lg"></i>
+                                <span class="text-xs uppercase tracking-wider">TikTok</span>
+                            </div>
+                            <span class="text-[9px] uppercase tracking-widest bg-[#d2d2ca]/10 px-2 py-0.5 rounded">Pronto</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección Especial: Dirección Física y Mapa de Google Maps -->
+        <section class="py-12 bg-[#333b4b] text-[#d2d2ca] border-t border-[#d2d2ca]/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Datos Esenciales de Ubicación (span 5 en desktop) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-[0.3em] opacity-80 block mb-2">Visítanos en Quillacollo</span>
+                            <h2 class="text-3xl uppercase tracking-widest text-[#FFD700]">Ubicación</h2>
+                            <div class="w-12 h-px bg-[#FFD700] my-3"></div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="text-[#FFD700] text-xl mt-1">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-xs uppercase tracking-widest opacity-70">Dirección</span>
+                                    <p class="text-base tracking-wide mt-1">
+                                        Av. Albina Patiño Km 15½, 1 km al Sur.<br>
+                                        Quillacollo, Cochabamba, Bolivia.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botón para abrir aplicación GPS (Google Maps) -->
+                        <div class="pt-2">
+                            <a href="https://maps.app.goo.gl/U7jdqKWfH1ycSJ5B6" 
+                               target="_blank" 
+                               class="inline-flex items-center gap-3 px-6 py-4 bg-transparent border-2 border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-[#333b4b] uppercase tracking-wider text-xs transition-colors">
+                                <i class="fa-solid fa-map-location-dot text-base"></i> Abrir en Google Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Representación Visual del Mapa (span 7 en desktop) - CUADRO DE UBICACIÓN MANTENIDO -->
+                    <div class="lg:col-span-7">
+                        <div class="border-2 border-[#d2d2ca] p-2 bg-[#d2d2ca] relative overflow-hidden group">
+                            
+                            <!-- Caja de diseño que simula el mapa de ingeniería con el pin rebotando -->
+                            <div class="w-full h-80 bg-[#1a1f28] relative flex flex-col justify-center items-center text-center p-6 select-none">
+                                
+                                <!-- Capa de Fondo Estética con Retícula de Diseño de Ingeniería -->
+                                <div class="absolute inset-0 opacity-15" style="background-image: radial-gradient(#d2d2ca 1px, transparent 1px); background-size: 20px 20px;"></div>
+                                
+                                <div class="z-10 flex flex-col items-center">
+                                    <!-- Icono rebotando de la ubicación -->
+                                    <div class="w-16 h-16 bg-[#333b4b] border border-[#FFD700] rounded-full flex items-center justify-center text-[#FFD700] mb-4 shadow-lg animate-bounce">
+                                        <i class="fa-solid fa-location-crosshairs text-2xl"></i>
+                                    </div>
+                                    <span class="text-lg uppercase tracking-widest text-white">Metal Studio Terán</span>
+                                    <span class="text-xs uppercase tracking-wider text-[#FFD700] mt-1">Quillacollo, Cochabamba, Bolivia</span>
+                                    <p class="text-[10px] opacity-60 mt-3 max-w-sm">
+                                        Ubicados por inmediaciones de la Av. Albina Patiño.
+                                    </p>
+                                    
+                                    <a href="https://maps.app.goo.gl/U7jdqKWfH1ycSJ5B6" 
+                                       target="_blank" 
+                                       class="mt-6 px-5 py-2.5 bg-[#333b4b] hover:bg-[#FFD700] hover:text-[#333b4b] text-white text-xs uppercase tracking-widest border border-[#d2d2ca]/30 transition-all">
+                                        Ver Ubicación Próxima <i class="fa-solid fa-location-arrow ml-1"></i>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página (Mantenido exactamente igual) -->
+    <footer class="bg-[#d2d2ca] text-[#333b4b] border-t border-[#333b4b] py-10 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <span class="block text-xl uppercase tracking-widest mb-4">Metal Studio Terán</span>
+            <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm uppercase tracking-wider">
+                <a href="../" class="hover:underline">Inicio</a>
+                <a href="../servicios" class="hover:underline">Servicios</a>
+                <a href="../productos" class="hover:underline">Productos</a>
+                <a href="../nosotros" class="hover:underline">Nosotros</a>
+                <a href="#" class="text-[#FFD700] hover:underline">Contacto</a>
+            </div>
+            <a href="http://metalstudio.teran.beer" class="underline uppercase tracking-wider text-sm">metalstudio.teran.beer</a>
+            <p class="mt-8 text-xs uppercase tracking-widest opacity-70">© 2025 Metal Studio Terán by Samuel Terán.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante WhatsApp Sencillo (Enlace Directo) -->
+    <a href="https://wa.me/59172614777?text=Hola%20estoy%20interesado%20en%20sus%20servicios." target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#333b4b] text-[#d2d2ca] border-2 border-[#d2d2ca] flex items-center justify-center rounded-full text-2xl z-50 hover:bg-[#d2d2ca] hover:text-[#333b4b] hover:border-[#333b4b] transition-colors shadow-lg">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Menú Móvil
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.replace('fa-xmark', 'fa-bars');
+            } else {
+                menuIcon.classList.replace('fa-bars', 'fa-xmark');
+            }
+        });
+    </script>
+</body>
+</html>

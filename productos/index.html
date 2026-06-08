@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Metal Studio Terán</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teran-primario': '#333b4b',
+                        'teran-secundario': '#d2d2ca',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Forzar fuente Arial y peso normal en todo el documento */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+        }
+        
+        /* Asegurar que ningún encabezado tome negrita por defecto del navegador */
+        h1, h2, h3, h4, h5, h6, p, a, span, button, input, textarea, select {
+            font-weight: normal !important;
+        }
+
+        /* Excepción para los íconos de FontAwesome que requieren font-weight específico para funcionar */
+        .fa-solid, .fa-brands {
+            font-weight: 900 !important;
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+        }
+    </style>
+</head>
+<body class="bg-[#d2d2ca] text-[#333b4b] flex flex-col min-h-screen text-base">
+
+    <!-- Encabezado / Navegación (Mantenido exactamente igual, Nosotros ahora está Activo en Dorado) -->
+    <header class="bg-[#333b4b] text-[#d2d2ca] sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <div class="flex items-center gap-4">
+                    <img src="../logo.jpg" alt="Metal Studio Terán" class="w-12 h-12 object-cover border border-[#d2d2ca]" onerror="this.onerror=null; this.src='https://placehold.co/100x100/d2d2ca/333b4b?text=Logo';">
+                    <div class="flex flex-col">
+                        <span class="text-xl uppercase tracking-widest">Metal Studio Terán</span>
+                        <span class="text-[10px] uppercase tracking-[0.2em] opacity-70">Diseño | Soldadura | Fabricación</span>
+                    </div>
+                </div>
+
+                <!-- Menú de escritorio con enlaces a carpetas (Nosotros marcado como Activo en Dorado) -->
+                <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-wider">
+                    <a href="../" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Inicio</a>
+                    <a href="../servicios" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Servicios</a>
+                    <a href="#" class="text-[#FFD700] border-b-2 border-[#FFD700] py-1 transition-all">Productos</a>
+                    <a href="../nosotros" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Nosotros</a>
+                    <a href="../contacto" class="hover:text-white border-b-2 border-transparent hover:border-[#d2d2ca] py-1 transition-all">Contacto</a>
+                </nav>
+
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 text-[#d2d2ca] hover:text-white">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable (Nosotros marcado como Activo en Dorado) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#333b4b] border-t border-[#d2d2ca]/20">
+            <div class="flex flex-col px-4 py-4 space-y-4 text-center uppercase text-sm tracking-wider">
+                <a href="../" class="text-[#d2d2ca] hover:text-white">Inicio</a>
+                <a href="../servicios" class="text-[#d2d2ca] hover:text-white">Servicios</a>
+                <a href="#" class="text-[#FFD700] hover:text-white">Productos</a>
+                <a href="../nosotros" class="text-[#d2d2ca] hover:text-white">Nosotros</a>
+                <a href="../contacto" class="text-[#d2d2ca] hover:text-white">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+
+
+        <!-- Sección de Capacidades y Productos -->
+        <section class="py-12 bg-[#333b4b] text-[#d2d2ca] border-t border-[#d2d2ca]/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs uppercase tracking-[0.3em] opacity-80 block mb-2">Nuestras Capacidades</span>
+                    <h2 class="text-3xl uppercase tracking-widest text-[#FFD700]">¿Qué Fabricamos para Ti?</h2>
+                    <div class="w-12 h-px bg-[#FFD700] mx-auto my-3"></div>
+                    <p class="text-xs uppercase tracking-wider opacity-70">
+                        Tenemos la experiencia y herramientas para ejecutar desde herrería fina hasta estructuras y maquinaria compleja.
+                    </p>
+                </div>
+
+                <!-- Rejilla de Especialidades -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Tarjeta 1: Maquinaria y Molinos -->
+                    <div class="bg-[#1a1f28]/40 border border-[#d2d2ca]/20 p-6 flex flex-col justify-between hover:border-[#FFD700]/50 transition-all">
+                        <div>
+                            <div class="text-[#FFD700] text-2xl mb-4">
+                                <i class="fa-solid fa-gears"></i>
+                            </div>
+                            <h3 class="text-lg uppercase tracking-wider text-white mb-2">Maquinarias y Molinos</h3>
+                            <p class="text-xs text-[#d2d2ca]/80 leading-relaxed uppercase tracking-wide">
+                                Diseñamos y construimos maquinaria industrial a medida, incluyendo molinos de alta resistencia y equipos de procesamiento adaptados a tu espacio de trabajo.
+                            </p>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest opacity-60 mt-4">— Eficiencia Industrial</span>
+                    </div>
+
+                    <!-- Tarjeta 2: Estructuras y Tinglados -->
+                    <div class="bg-[#1a1f28]/40 border border-[#d2d2ca]/20 p-6 flex flex-col justify-between hover:border-[#FFD700]/50 transition-all">
+                        <div>
+                            <div class="text-[#FFD700] text-2xl mb-4">
+                                <i class="fa-solid fa-warehouse"></i>
+                            </div>
+                            <h3 class="text-lg uppercase tracking-wider text-white mb-2">Tinglados y Pérgolas</h3>
+                            <p class="text-xs text-[#d2d2ca]/80 leading-relaxed uppercase tracking-wide">
+                                Estructuras metálicas de gran envergadura. Calculamos e instalamos tinglados robustos, cubiertas y pérgolas de diseño elegante tanto para áreas comerciales como residenciales.
+                            </p>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest opacity-60 mt-4">— Espacios Protegidos</span>
+                    </div>
+
+                    <!-- Tarjeta 3: Rejas y Cerrajería -->
+                    <div class="bg-[#1a1f28]/40 border border-[#d2d2ca]/20 p-6 flex flex-col justify-between hover:border-[#FFD700]/50 transition-all">
+                        <div>
+                            <div class="text-[#FFD700] text-2xl mb-4">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="text-lg uppercase tracking-wider text-white mb-2">Rejas y Verjas</h3>
+                            <p class="text-xs text-[#d2d2ca]/80 leading-relaxed uppercase tracking-wide">
+                                Protegemos lo que más quieres sin descuidar la estética. Fabricamos rejas de seguridad, verjas ornamentales y portones con acabados de alta calidad para intemperie.
+                            </p>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest opacity-60 mt-4">— Seguridad y Estética</span>
+                    </div>
+
+                    <!-- Tarjeta 4: Mobiliario Industrial y Mayorista -->
+                    <div class="bg-[#1a1f28]/40 border border-[#d2d2ca]/20 p-6 flex flex-col justify-between hover:border-[#FFD700]/50 transition-all">
+                        <div>
+                            <div class="text-[#FFD700] text-2xl mb-4">
+                                <i class="fa-solid fa-chair"></i>
+                            </div>
+                            <h3 class="text-lg uppercase tracking-wider text-white mb-2">Muebles al Por Mayor</h3>
+                            <p class="text-xs text-[#d2d2ca]/80 leading-relaxed uppercase tracking-wide">
+                                Proveemos mobiliario industrial y sillas metálicas en volumen para restaurantes, oficinas y comercios. Durabilidad insuperable y consistencia en cada pieza.
+                            </p>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest opacity-60 mt-4">— Producción en Serie</span>
+                    </div>
+
+                    <!-- Tarjeta 5: Planos y Diseño 3D -->
+                    <div class="bg-[#1a1f28]/40 border border-[#d2d2ca]/20 p-6 flex flex-col justify-between hover:border-[#FFD700]/50 transition-all">
+                        <div>
+                            <div class="text-[#FFD700] text-2xl mb-4">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                            <h3 class="text-lg uppercase tracking-wider text-white mb-2">Diseños y Planos Previos</h3>
+                            <p class="text-xs text-[#d2d2ca]/80 leading-relaxed uppercase tracking-wide">
+                                Olvídate de adivinar cómo se verá tu proyecto. Elaboramos planos constructivos y representaciones en 3D para tu aprobación previa antes de iniciar la fabricación física.
+                            </p>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest opacity-60 mt-4">— Cero Incertidumbre</span>
+                    </div>
+
+                    <!-- Tarjeta 6: Proyectos Personalizados -->
+                    <div class="bg-[#1a1f28]/40 border border-[#d2d2ca]/20 p-6 flex flex-col justify-between hover:border-[#FFD700]/50 transition-all">
+                        <div>
+                            <div class="text-[#FFD700] text-2xl mb-4">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <h3 class="text-lg uppercase tracking-wider text-white mb-2">Proyectos Especiales</h3>
+                            <p class="text-xs text-[#d2d2ca]/80 leading-relaxed uppercase tracking-wide">
+                                ¿Tienes una idea única o un requerimiento técnico específico? Si se puede dibujar y es de metal, nosotros podemos fabricarlo. Cuéntanos tu necesidad.
+                            </p>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest opacity-60 mt-4">— Soluciones Únicas</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Banner de Confianza y Acción Directa -->
+        <section class="py-12 bg-white border-t border-b border-[#333b4b]/30">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <span class="text-xs uppercase tracking-[0.3em] opacity-80 block mb-2">¿Listo para empezar?</span>
+                <h2 class="text-3xl uppercase tracking-widest text-[#333b4b]">Hablemos de tu Proyecto</h2>
+                <div class="w-12 h-px bg-[#333b4b] mx-auto my-3"></div>
+                <p class="text-sm max-w-xl mx-auto uppercase tracking-wider opacity-80 mb-6">
+                    Sin compromisos, coordinemos una llamada para platicar de tus planos, darte una cotización transparente o agendar una visita a nuestro taller en Quillacollo.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://wa.me/59172614777?text=Hola%20Samuel%2C%20quisiera%20conversar%20sobre%20un%20proyecto%20de%20metal%20mec%C3%A1nica%20que%20tengo." 
+                       target="_blank" 
+                       class="px-6 py-4 bg-[#333b4b] text-white hover:bg-[#FFD700] hover:text-[#333b4b] uppercase tracking-wider text-xs transition-colors border border-[#333b4b]">
+                        <i class="fa-solid fa-comments mr-2"></i> Consulta Directa
+                    </a>
+                    <a href="contacto/" 
+                       class="px-6 py-4 bg-transparent border-2 border-[#333b4b] text-[#333b4b] hover:bg-[#333b4b] hover:text-white uppercase tracking-wider text-xs transition-colors">
+                        Ver Ubicación y Medios
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página (Mantenido exactamente igual, Nosotros marcado como activo) -->
+    <footer class="bg-[#d2d2ca] text-[#333b4b] border-t border-[#333b4b] py-10 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <span class="block text-xl uppercase tracking-widest mb-4">Metal Studio Terán</span>
+            <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm uppercase tracking-wider">
+                <a href="../" class="hover:underline">Inicio</a>
+                <a href="../servicios" class="hover:underline">Servicios</a>
+                <a href="#" class="text-[#FFD700] hover:underline">Productos</a>
+                <a href="../nosotros" class="hover:underline">Nosotros</a>
+                <a href="../contacto" class="hover:underline">Contacto</a>
+            </div>
+            <a href="http://metalstudio.teran.beer" class="underline uppercase tracking-wider text-sm">metalstudio.teran.beer</a>
+            <p class="mt-8 text-xs uppercase tracking-widest opacity-70">© 2025 Metal Studio Terán by Samuel Terán.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante WhatsApp Sencillo (Enlace Directo) -->
+    <a href="https://wa.me/59172614777?text=Hola%20estoy%20interesado%20en%20sus%20servicios." target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#333b4b] text-[#d2d2ca] border-2 border-[#d2d2ca] flex items-center justify-center rounded-full text-2xl z-50 hover:bg-[#d2d2ca] hover:text-[#333b4b] hover:border-[#333b4b] transition-colors shadow-lg">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Menú Móvil
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.replace('fa-xmark', 'fa-bars');
+            } else {
+                menuIcon.classList.replace('fa-bars', 'fa-xmark');
+            }
+        });
+    </script>
+</body>
+</html>
